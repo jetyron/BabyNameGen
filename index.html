@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Baby Name Maker</title>
+        <script src="generator.js"></script>
+        <style>
+            h1 {
+                font-size: 100px;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            }
+            p {
+                font-size: 90px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            body {
+                background-color: black;
+            }
+            * {
+                color: whitesmoke;
+                text-align: center;
+            }
+            button {
+                color: black;
+                font-size: 40px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+            input {
+                color: black;
+                font-size: 40px;
+                font-family: 'Courier New', Courier, monospace
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Baby Name Maker</h1>
+        <input type="text" placeholder="Last Name" id="name" name="name">
+        <button onclick="babyName()">New Name</button>
+        <p id="randomName"></p>
+    </body>
+</html>
