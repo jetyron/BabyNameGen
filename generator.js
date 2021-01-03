@@ -26,5 +26,7 @@ const newName = x => {
 
 const babyName = () => {
     let surName = document.getElementById('name').value;
-    document.getElementById("randomName").innerHTML = `${newName(Math.floor((Math.random()*7)+3))} ${newName(Math.floor((Math.random()*7)+3))} ${surName}`;
+    let msg = `${newName(Math.floor((Math.random()*7)+3))} ${newName(Math.floor((Math.random()*7)+3))} ${surName}`;
+    document.getElementById("randomName").innerHTML = msg;
+    speechSynthesis.speak(new SpeechSynthesisUtterance(msg));
 }
