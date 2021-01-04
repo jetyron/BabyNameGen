@@ -10,15 +10,15 @@ const picker = arr => {
 //random name generator
 const newName = x => {
     let name = [];
-    //10% chance of vowel added to beginning of name
-    if (Math.random() > .9) {
+    //10% chance of vowel added to beginning of names longer than 4 letters
+    if (Math.random() > .9 && x > 4) {
         name.push(picker(vowels));
     }
     //populates the name array
     while (name.length < x) {
         let i = Math.floor(Math.random() * 100);
-        //80% chance of syllable with common letters
-        if (i < 80) {
+        //90% chance of syllable with common consonant
+        if (i < 90) {
             //determines order of syllable components
             if (i % 2 === 0) {
                 name.push(picker(vowels));
@@ -28,8 +28,8 @@ const newName = x => {
                 name.push(picker(vowels));
             }
         }
-        //10% chance of syllable with uncommon letter
-        if (i >= 80 && i <= 90) {
+        //10% chance of syllable with uncommon consonant
+        if (i >= 90) {
             //determines order of syllable
             if (i % 2 === 0) {
                 name.push(picker(vowels));
@@ -37,15 +37,6 @@ const newName = x => {
             } else {
                 name.push(picker(unCon));
                 name.push(picker(vowels));
-            }
-        }
-        //10% chance of single consonant 
-        if (i > 90) {
-            //determines with 80% in favor of common
-            if (i > 92) {
-                name.push(picker(cmCon));
-            } else {
-                name.push(picker(unCon));
             }
         }
     }
