@@ -48,7 +48,7 @@ const newName = x => {
 //displays randomly generated name and activates TTS feature
 const babyName = () => {
     let surName = document.getElementById('name').value;
-    let msg = `${newName(Math.floor((Math.random()*7)+3))} ${newName(Math.floor((Math.random()*7)+3))} ${surName}`;
+    let msg = `${newName(Math.floor((Math.random()*6)+3))} ${newName(Math.floor((Math.random()*6)+3))} ${surName}`;
     document.getElementById("randomName").innerHTML = msg;
     speechSynthesis.speak(new SpeechSynthesisUtterance(msg));
 }
